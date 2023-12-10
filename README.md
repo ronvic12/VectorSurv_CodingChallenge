@@ -3,7 +3,7 @@ Axios,React, MySQL,Node.js, HTML/CSS/JS
 
 
 # server run script 
-npm run prodmovieStart
+npm run movieStart
 
 # react client run script
 npm start 
