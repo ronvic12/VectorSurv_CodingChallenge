@@ -1,7 +1,7 @@
 import React,{useState} from "react";
 import axios from "axios";
 import MovieTable from "./MovieTable";
-
+import './main.css'
 function Home(){
     // initialize state here 
     const [movieTitle,setmovieTitle] = useState('');
@@ -29,7 +29,8 @@ function Home(){
         })
     }
     return (
-            <div>
+        <body>
+            <div className= "movieForm">
                 <label>
                     Movie Title:
                 </label>
@@ -52,9 +53,9 @@ function Home(){
                 <input type = "email" value = {studioemail} onChange = {(e) => setstudioemail(e.target.value)}/>
                 
                 <button onClick={savemovieForm}>Save</button>
-                <MovieTable movieData = {table} />
             </div>
-
+            <MovieTable movieData = {table} />
+            </body>
     )
 }
 export default Home;

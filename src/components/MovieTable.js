@@ -1,7 +1,8 @@
 import React from "react";
+import './main.css'
 function MovieTable({movieData}){
     return (
-        <div>
+        <div className="movieTable">
           {movieData && movieData.length > 0 ? (
             <table>
               <thead>
@@ -17,7 +18,7 @@ function MovieTable({movieData}){
                 {movieData.map((movie, index) => (
                   <tr key={index}>
                     <td>{movie.movieTitle}</td>
-                    <td>{movie.releaseDate}</td>
+                    <td>{new Date(movie.releaseDate).toLocaleDateString("en-US",{year:"numeric",month:"long",day:"numeric"})}</td>
                     <td>{movie.movieRating}</td>
                     <td>{movie.genre}</td>
                     <td>{movie.studioemail}</td>
