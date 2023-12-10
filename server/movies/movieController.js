@@ -11,5 +11,5 @@ let data = {
 
     let insertandshow = await movieService.insertandshowForm(data)
 
-    console.log(insertandshow)
+    res.send(insertandshow)
 }

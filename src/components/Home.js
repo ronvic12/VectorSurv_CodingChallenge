@@ -1,5 +1,6 @@
 import React,{useState} from "react";
 import axios from "axios";
+import MovieTable from "./MovieTable";
 
 function Home(){
     // initialize state here 
@@ -8,6 +9,7 @@ function Home(){
     const [movieRating,setmovieRating] = useState('');
     const [genre,setgenre] = useState('');
     const [studioemail,setstudioemail] = useState('');
+    const [table,settable] = useState('');
 
     function savemovieForm(){
         let dataentry = {
@@ -21,7 +23,7 @@ function Home(){
         // do axios post here 
         axios.post('http://localhost:3000/api/movies/movieForm',dataentry)
         .then((response) =>{
-
+            settable(response.data)
         }).catch((error) =>{
             console.error(error)
         })
@@ -50,6 +52,7 @@ function Home(){
                 <input type = "email" value = {studioemail} onChange = {(e) => setstudioemail(e.target.value)}/>
                 
                 <button onClick={savemovieForm}>Save</button>
+                <MovieTable movieData = {table} />
             </div>
 
     )
