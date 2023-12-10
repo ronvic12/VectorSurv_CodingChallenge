@@ -1,5 +1,13 @@
-module.exports.movieForm = async(req,res,next) => {
 
-console.log("Router is working here")
-console.log(req.body)
+const movieService = require('./movieService')
+module.exports.movieForm = async(req,res,next) => {
+let data = {
+    movieTitle:req.body.movieTitle,
+    releaseDate:req.body.releaseDate,
+    movieRating:req.body.movieRating,
+    genre:req.body.genre,
+    studioemail:req.body.studioemail,
+}
+
+    let insertandshow = await movieService.insertandshowForm(data)
 }
