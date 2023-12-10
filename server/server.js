@@ -3,12 +3,12 @@ const app = express();
 const cors = require('cors');
 const port = 3000;
 const bodyParser = require('body-parser');
-
+const {router} = require('./routers/router')
 
 app.use(express.json()); // middle ware to parse json requests
 app.use(cors()); //
 app.use(bodyParser.json()); //
-
+app.use('/api',router)
 app.use(express.urlencoded({
     extended: true,
     limit: '50mb',

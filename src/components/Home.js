@@ -18,6 +18,13 @@ function Home(){
             studioemail
         }
         console.log(dataentry)
+        // do axios post here 
+        axios.post('http://localhost:3000/api/movies/movieForm',dataentry)
+        .then((response) =>{
+
+        }).catch((error) =>{
+            console.error(error)
+        })
     }
     return (
             <div>
