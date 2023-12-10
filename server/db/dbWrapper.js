@@ -2,7 +2,7 @@ const MySQLConnector = require('./dbConnection');
 module.exports = class MySQLWrapper {
 
     static createQuery({query,params}) {
-        return new Promise(function(resolve, reject) {
+        return new Promise((succeed,fail) => {
             MySQLConnector.pool.getConnection((err, connection) => {
                 if (err) {
                     return fail(err);
